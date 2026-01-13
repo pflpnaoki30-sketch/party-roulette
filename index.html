@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="楽しいルーレットアプリ - 選択肢を追加して回そう！">
+    <title>🎉 ルーレット</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- ヘッダー -->
+        <header class="app-header">
+            <h1 class="app-title">
+                <span class="emoji">🎡</span>
+                ルーレット
+            </h1>
+            <p class="app-subtitle">選択肢を追加して回そう！</p>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main class="main-content">
+            <!-- ルーレット表示エリア -->
+            <section class="wheel-section">
+                <div class="canvas-wrapper">
+                    <canvas id="wheelCanvas" width="400" height="400"></canvas>
+                    <div class="wheel-pointer">▼</div>
+                </div>
+
+                <!-- スピンボタン -->
+                <button id="spinButton" class="spin-button" type="button">
+                    <span class="spin-icon">🎲</span>
+                    <span class="spin-text">ルーレットを回す！</span>
+                </button>
+            </section>
+
+            <!-- 操作パネル -->
+            <section class="control-panel">
+                <h2 class="panel-title">
+                    <span class="emoji">📝</span>
+                    選択肢を追加
+                </h2>
+
+                <!-- 入力フォーム -->
+                <div class="input-group">
+                    <input type="text" id="itemInput" class="item-input" placeholder="選択肢を入力..." maxlength="20"
+                        autocomplete="off">
+                    <button id="addButton" class="add-button" type="button">
+                        <span class="add-icon">＋</span>
+                        <span class="add-text">追加</span>
+                    </button>
+                </div>
+
+                <!-- 候補リスト -->
+                <div class="list-section">
+                    <h3 class="list-title">
+                        <span class="emoji">🎯</span>
+                        現在の選択肢
+                        <span id="itemCount" class="item-count">0</span>
+                    </h3>
+                    <ul id="itemList" class="item-list">
+                        <!-- 選択肢がここに動的に追加される -->
+                        <li class="item-placeholder">
+                            <span class="placeholder-icon">💡</span>
+                            <span class="placeholder-text">選択肢を追加してください</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- フッター -->
+        <footer class="app-footer">
+            <p>🎉 みんなで楽しくルーレット！</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
